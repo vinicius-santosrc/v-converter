@@ -16,7 +16,7 @@ const ConverterMp4 = () => {
             return
         }
         try {
-            const response = await axios.get("http://localhost:3001/api/convert", {
+            const response = await axios.get("https://api-v-converter.vercel.app/api/convert", {
                 params: {
                     videoURL: url
                 }
@@ -33,7 +33,7 @@ const ConverterMp4 = () => {
 
     async function downloadVideo() {
         try {
-            const response = await fetch(`http://localhost:3001/download?link=${url}`);
+            const response = await fetch(`https://api-v-converter.vercel.app/download?link=${url}`);
             const videoBlob = await response.arrayBuffer();
 
             // Convert the ArrayBuffer to Blob
