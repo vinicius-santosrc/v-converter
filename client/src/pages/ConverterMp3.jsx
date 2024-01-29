@@ -34,8 +34,8 @@ const ConverterMp3 = () => {
     async function downloadVideo() {
         setLoading(true);
         try {
-            const response = await fetch(`http://localhost:3001/downloadmp3?link=${url}`);
-            //const response = await fetch(`https://api-v-converter.vercel.app/downloadmp3?link=${url}`);
+            //const response = await fetch(`http://localhost:3001/downloadmp3?link=${url}`);
+            const response = await fetch(`https://api-v-converter.vercel.app/downloadmp3?link=${url}`);
             const videoBlob = await response.arrayBuffer();
 
             // Convert the ArrayBuffer to Blob
