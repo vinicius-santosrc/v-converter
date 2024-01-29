@@ -30,7 +30,7 @@ app.get('/downloadmp4', async (req, res) => {
     try {
         const videoInfo = await ytdl.getInfo(link);
 
-        const videoFormat = videoInfo.formats.reverse().find(format => format.hasAudio && format.hasVideo);
+        const videoFormat = videoInfo.formats.find(format => format.hasAudio && format.hasVideo);
         //const videoFormat = ytdl.chooseFormat(videoInfo.formats, { quality: 'hightest' });
 
         if (!videoFormat) {
