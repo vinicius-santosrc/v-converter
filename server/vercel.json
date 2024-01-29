@@ -11,5 +11,34 @@
             "src": "(.*)",
             "dest": "index.js"
         }
+    ],
+    "headers": [
+        {
+            "source": "/download",
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "https://v-converter.vercel.app"
+                }
+            ]
+        },
+        {
+            "source": "/downloadmp3",
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "https://v-converter.vercel.app"
+                }
+            ]
+        },
+        {
+            "source": "/api/convert",
+            "headers": [
+                {
+                    "key": "Access-Control-Allow-Origin",
+                    "value": "https://v-converter.vercel.app"
+                }
+            ]
+        }
     ]
 }
