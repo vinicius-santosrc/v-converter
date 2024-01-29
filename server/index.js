@@ -24,7 +24,7 @@ app.get(`/api/convert`, async (req, res) => {
 
 })
 
-app.get('/download', async (req, res) => {
+app.get('/downloadmp4', async (req, res) => {
     const link = req.query.link;
 
     try {
