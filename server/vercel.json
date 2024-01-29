@@ -14,11 +14,11 @@
     ],
     "headers": [
         {
-            "source": "/download",
+            "source": "/downloadmp4",
             "headers": [
                 {
                     "key": "Access-Control-Allow-Origin",
-                    "value": "https://v-converter.vercel.app"
+                    "value": "*"
                 }
             ]
         },
@@ -27,7 +27,7 @@
             "headers": [
                 {
                     "key": "Access-Control-Allow-Origin",
-                    "value": "https://v-converter.vercel.app"
+                    "value": "*"
                 }
             ]
         },
@@ -36,7 +36,7 @@
             "headers": [
                 {
                     "key": "Access-Control-Allow-Origin",
-                    "value": "https://v-converter.vercel.app"
+                    "value": "*"
                 }
             ]
         }
