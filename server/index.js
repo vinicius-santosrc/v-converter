@@ -38,7 +38,6 @@ app.get('/download', async (req, res) => {
 
         res.header({
             'Content-Type': videoFormat.mimeType,
-            'Content-Disposition': `attachment; filename="${videoInfo.videoDetails.title}.mp4"`,
         });
 
         ytdl(link, { format: videoFormat })
@@ -68,7 +67,6 @@ app.get('/downloadmp3', async (req, res) => {
 
         res.header({
             'Content-Type': videoFormat.mimeType,
-            'Content-Disposition': `attachment; filename="${videoInfo.videoDetails.title}.mp4"`,
         });
 
         ytdl(link, { format: videoFormat })

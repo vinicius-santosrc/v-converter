@@ -32,7 +32,9 @@ const ConverterMp3 = () => {
     }
 
     async function downloadVideo() {
+        setLoading(true);
         try {
+            //const response = await fetch(`http://localhost:3001/downloadmp3?link=${url}`);
             const response = await fetch(`https://api-v-converter.vercel.app/downloadmp3?link=${url}`);
             const videoBlob = await response.arrayBuffer();
 
@@ -47,15 +49,26 @@ const ConverterMp3 = () => {
             //a.href = videoBlobObject;
             a.download = `${videoDetails.videoDetails.title + " - V-CONVERTER"}.mp3`;
             a.click();
+            setLoading(false);
 
         } catch (error) {
             console.error(error);
+            setLoading(false);
         }
     }
 
 
     return (
         <>
+            {loading &&
+                <div className='fixed flex items-center bg-white/45 mx-auto justify-center text-center w-[100vw] h-[100vh] top-0 left-0'>
+                    <l-bouncy
+                        size="65"
+                        speed="1.75"
+                        color="#5E17EB"
+                    ></l-bouncy>
+                </div>
+            }
             <section
                 className="lg:w-[100%] m-auto"
             >

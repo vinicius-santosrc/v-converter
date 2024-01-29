@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Banner from '../images/mp4-banner.webp';
+import { bouncy } from 'ldrs'
+
+bouncy.register()
 
 const ConverterMp4 = () => {
 
@@ -32,7 +35,9 @@ const ConverterMp4 = () => {
     }
 
     async function downloadVideo() {
+        setLoading(true)
         try {
+            //const response = await fetch(`http://localhost:3001/download?link=${url}`);
             const response = await fetch(`https://api-v-converter.vercel.app/download?link=${url}`);
             const videoBlob = await response.arrayBuffer();
 
@@ -47,9 +52,11 @@ const ConverterMp4 = () => {
             //a.href = videoBlobObject;
             a.download = `${videoDetails.videoDetails.title + " - V-CONVERTER"}.mp4`;
             a.click();
+            setLoading(false)
 
         } catch (error) {
             console.error(error);
+            setLoading(false)
         }
     }
 
@@ -57,6 +64,15 @@ const ConverterMp4 = () => {
 
     return (
         <>
+            {loading &&
+                <div className='fixed flex items-center bg-white/45 mx-auto justify-center text-center w-[100vw] h-[100vh] top-0 left-0'>
+                    <l-bouncy
+                        size="65"
+                        speed="1.75"
+                        color="#5E17EB"
+                    ></l-bouncy>
+                </div>
+            }
             <section
                 className="lg:w-[100%] m-auto"
             >
