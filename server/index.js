@@ -39,7 +39,7 @@ app.get('/download', async (req, res) => {
 
         res.header({
             'Content-Type': videoFormat.mimeType,
-            'Access-Control-Allow-Origin': 'https://v-converter.vercel.app',
+            'Access-Control-Allow-Origin': '*',
         });
 
         ytdl(link, { format: videoFormat })
@@ -69,7 +69,7 @@ app.get('/downloadmp3', async (req, res) => {
 
         res.header({
             'Content-Type': videoFormat.mimeType,
-            'Access-Control-Allow-Origin': 'https://v-converter.vercel.app',
+            'Access-Control-Allow-Origin': '*',
         });
 
         ytdl(link, { format: videoFormat })
