@@ -7,7 +7,8 @@ const app = express();
 const port = 3001
 
 app.use(express.json());
-app.use(cors())
+
+app.use(cors());
 
 app.get(`/api/convert`, async (req, res) => {
     try {
@@ -38,6 +39,7 @@ app.get('/download', async (req, res) => {
 
         res.header({
             'Content-Type': videoFormat.mimeType,
+            'Access-Control-Allow-Origin': '*',
         });
 
         ytdl(link, { format: videoFormat })
@@ -67,6 +69,7 @@ app.get('/downloadmp3', async (req, res) => {
 
         res.header({
             'Content-Type': videoFormat.mimeType,
+            'Access-Control-Allow-Origin': '*',
         });
 
         ytdl(link, { format: videoFormat })
