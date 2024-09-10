@@ -38,10 +38,7 @@ const ConverterMp3 = () => {
             const response = await fetch(`https://api-v-converter.vercel.app/downloadmp3?link=${url}`);
             const videoBlob = await response.arrayBuffer();
 
-            // Convert the ArrayBuffer to Blob
             const videoBlobObject = new Blob([videoBlob], { type: 'video/mp3' });
-
-            // Create a new video element and set its source to the Blob
 
             var a = document.createElement("a");
             a.style.display = 'none';

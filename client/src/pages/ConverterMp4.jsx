@@ -40,11 +40,8 @@ const ConverterMp4 = () => {
             //const response = await fetch(`http://localhost:3001/downloadmp4?link=${url}`);
             const response = await fetch(`https://api-v-converter.vercel.app/downloadmp4?link=${url}`);
             const videoBlob = await response.arrayBuffer();
-
-            // Convert the ArrayBuffer to Blob
+            
             const videoBlobObject = new Blob([videoBlob], { type: 'video/mp4' });
-
-            // Create a new video element and set its source to the Blob
 
             var a = document.createElement("a");
             a.style.display = 'none';
